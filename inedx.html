@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Print Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>3D Print Pricing Calculator</h1>
+        <p class="tagline">Para sa mga Pinoy 3D Printing Enthusiasts</p>
+        
+        <div class="calculator">
+          <div class="input-section">
+            <h2>Print Information</h2>
+            
+            <div class="form-group">
+              <label for="filament-weight">Filament Weight (grams)</label>
+              <input type="number" id="filament-weight" min="1" value="20">
+            </div>
+            
+            <div class="form-group">
+              <label for="print-time">Print Time (hours)</label>
+              <input type="number" id="print-time" min="0.1" step="0.1" value="1.5">
+            </div>
+            
+            <div class="form-group">
+              <label for="complexity">Print Complexity</label>
+              <select id="complexity">
+                <option value="low">Low - Simple shapes, minimal supports</option>
+                <option value="medium" selected>Medium - Some details, moderate supports</option>
+                <option value="high">High - Intricate details, many supports</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="profit-margin">Profit Margin (%)</label>
+              <div class="range-slider">
+                <input type="range" id="profit-margin" min="20" max="60" value="35">
+                <span class="range-value" id="profit-value">35%</span>
+              </div>
+            </div>
+            
+            <button id="calculate-btn">Calculate Price</button>
+            
+            <div class="presets">
+              <h3>Quick Presets</h3>
+              <div class="preset-buttons">
+                <button class="preset-button" data-weight="20" data-time="1.5" data-complexity="medium">Small Figurine</button>
+                <button class="preset-button" data-weight="35" data-time="2" data-complexity="low">Phone Stand</button>
+                <button class="preset-button" data-weight="60" data-time="4" data-complexity="medium">Toy Car</button>
+                <button class="preset-button" data-weight="150" data-time="12" data-complexity="high">Cosplay Prop</button>
+              </div>
+            </div>
+            
+            <div class="settings-toggle">
+              <button id="toggle-settings">Advanced Settings</button>
+            </div>
+            
+            <div class="advanced-settings" id="advanced-settings">
+              <h3>Cost Parameters</h3>
+              
+              <div class="form-group">
+                <label for="filament-cost">Filament Cost per Gram (₱)</label>
+                <input type="number" id="filament-cost" min="0.1" step="0.1" value="1.2">
+              </div>
+              
+              <div class="form-group">
+                <label for="electricity-cost">Electricity Cost per Hour (₱)</label>
+                <input type="number" id="electricity-cost" min="0.1" step="0.1" value="5">
+              </div>
+              
+              <div class="form-group">
+                <label for="wear-tear-cost">Wear & Tear Cost per Hour (₱)</label>
+                <input type="number" id="wear-tear-cost" min="0.1" step="0.1" value="3">
+              </div>
+              
+              <div class="form-group">
+                <label for="labor-cost">Base Labor Cost per Hour (₱)</label>
+                <input type="number" id="labor-cost" min="1" step="1" value="15">
+              </div>
+            </div>
+          </div>
+          
+          <div class="result-section" id="results">
+            <h2>Price Breakdown</h2>
+            
+            <div class="result-item">
+              <span class="result-label">Material Cost:</span>
+              <span class="result-value" id="material-cost">₱24.00</span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Electricity Cost:</span>
+              <span class="result-value" id="electricity-result">₱7.50</span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Wear & Tear:</span>
+              <span class="result-value" id="wear-tear-result">₱4.50</span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Labor Cost:</span>
+              <span class="result-value" id="labor-result">₱22.50</span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Total Base Cost:</span>
+              <span class="result-value" id="base-cost">₱58.50</span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Profit Margin:</span>
+              <span class="result-value" id="margin-result">₱20.48 (35%)</span>
+            </div>
+            
+            <div class="final-price">
+              <div>Suggested Price</div>
+              <div id="final-price">₱135.00</div>
+            </div>
+            
+            <div class="calculation-breakdown">
+              <div class="breakdown-title">Tips:</div>
+              <ul>
+                <li>For regular customers, consider offering a 5-10% discount</li>
+                <li>For complex designs, adjust the complexity level</li>
+                <li>For rush orders, you can add 15-20% to the final price</li>
+                <li>Shopee competitors typically charge ₱1.50-₱2.00 per gram (low quality)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <p>Designed for Filipino 3D Print Entrepreneurs</p>
+        </div>
+      </div>
+</body>
+</html>
